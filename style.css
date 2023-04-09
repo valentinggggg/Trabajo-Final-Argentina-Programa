@@ -280,8 +280,10 @@ textarea{
     margin-right: 0.5rem;
 }
 
+
 .cuerpo-modal {
     background-color: gainsboro;
+    width: 50vw;
 }
 
 .boton-reclamo{
