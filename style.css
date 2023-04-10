@@ -283,7 +283,6 @@ textarea{
 
 .cuerpo-modal {
     background-color: gainsboro;
-    width: 50vw;
 }
 
 .boton-reclamo{
@@ -294,4 +293,18 @@ textarea{
     border-color: #407f96;
     color: white;
     font-size: large;
+}
+
+.Mensaje-Area {
+    margin-top: 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+#itmessage {
+    width: 430px;
+    height: 130px;
+    text-align: initial;
 }

@@ -1,47 +1,17 @@
-$(document).ready(function(){
+$(document).ready(function(){});
 
-  function SubirForm(event) {
-    event.preventDefault
-    console.log ("Hola Mundo")
-  }
+function subirForm(event) {
+  event.preventDefault();
+  var errorname = $("#errorname").val();
+  var errorapellido = $("#errorapellido").val();
+  var errormail = $("#errormail").val(); 
+  var errortelefono = $("#errortelefono").val(); 
+  var errormensaje = $("#errormensaje").val();
 
-   $("#EnviarBoton").click(function(){
-    var nombre = $("#itname").val();
-    var apellido = $("#itapellido").val();
-    var mail = $("#itemail").val(); 
-    var telefono = $("#itTelefono").val(); 
-    var mensaje = $("#itmessage").val();
-
-    if (nombre == "" ){
-      $("#errorname").fadeIn();
-      return false;
-    } else {
-        $("#errorname").fadeOut();
+  $("input").each(function(){
+    if ($(this).val === "" || $(this).val === " " || $(this).val === undefined) {
+      $(".errores").show
     }
-    if (apellido == "" ) {
-          $("#errorapellido").fadeIn();
-          return false;
-        }else{
-          $("#errorapellido").fadeOut();
-        }
-    if (mail == "" ) {
-          $("#errormail").fadeIn();
-          return false;
-        }else{
-          $("#errormail").fadeOut();
-        }
-    if (telefono == "" ) {
-          $("#errortelefono").fadeIn();
-          return false;
-        }else{
-          $("#errortelefono").fadeOut();
-        }
-    if (mensaje == "" ) {
-          $("#errormensaje").fadeIn();
-          return false;
-        }else{
-          $("#errormensaje").fadeOut();
-        }
 
-   });
-  });
+    })
+  };
