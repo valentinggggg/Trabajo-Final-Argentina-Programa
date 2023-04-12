@@ -262,7 +262,6 @@ textarea{
     margin: 2rem;
 }
 .errores {
-    display: none;
     position: absolute;
     margin-top: 52px;
     color: red
@@ -307,4 +306,17 @@ textarea{
     width: 430px;
     height: 130px;
     text-align: initial;
+}
+
+#errores-cometidos {
+    display: none;
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    margin-left: 650px;
+    margin-bottom: 520px;
+}
+
+.lista-errores {
+    display: flex;
 }
