@@ -312,9 +312,7 @@ textarea{
 #alerta-errores {
     display: none;
 }
-.contenedor-errores{
-    
-}
+
 .errores-cometidos {
     display: flex;
     position: absolute;
