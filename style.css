@@ -306,10 +306,14 @@ textarea{
     width: 430px;
     height: 130px;
     text-align: initial;
+    resize: none;
 }
 
 #alerta-errores {
     display: none;
+}
+.contenedor-errores{
+    
 }
 .errores-cometidos {
     display: flex;
@@ -321,13 +325,7 @@ textarea{
     background-color: #f8d7da;
     color: black;
     height: 100px;
-    width: 300px;
-    margin-left: 650px;
-    margin-bottom: 520px;
-    padding: 0%;
-    padding-left: 0%;
-    justify-content: center;
-    align-items: center;
+    width: 280px;
 }
 
 
@@ -335,4 +333,15 @@ textarea{
     margin: 0%;
     font-size: 0.8rem;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+  #summary {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+.cuerpo-resumen{
+    height: 300px;
 }

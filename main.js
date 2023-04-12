@@ -2,6 +2,7 @@ $(document).ready(function(){});
 
 function subirForm(event) {
   event.preventDefault();
+  $("#mistakesform").empty();
   let mistakes = [];
   const nombre = $("#itname").val();
   const apellido = $("#itapellido").val();
@@ -36,9 +37,73 @@ function subirForm(event) {
 
   };
 
+  function SubirFormReclamo(event) {
+    event.preventDefault();
+    let erroresreclamo = [];
+    const emailReclamo = $("#emailreclamo").val();
+    const Numeropedido = $("#NumeroPedido").val();
+    const MensajeReclamo = $("#messagereclamo").val();
+    const nextBtn = document.querySelector("#next-btn");
+  const backBtn = document.querySelector("#back-btn");
+  const step1 = document.querySelector("#FormReclamo");
+  const step2 = document.querySelector("#step-2");
+  const summary = document.querySelector("#summary");
 
-  // var errorname = $("#errorname").val();
-  // var errorapellido = $("#errorapellido").val();
-  // var errormail = $("#errormail").val(); 
-  // var errortelefono = $("#errortelefono").val(); 
-  // var errormensaje = $("#errormensaje").val();
+  if (emailReclamo == "" || emailReclamo == " " || emailReclamo == undefined )mistakes.push("⚠ Ingrese un Email ");
+
+  if (telefono == "" || telefono == " " || telefono == undefined )mistakes.push("⚠ Ingrese un Telefono") ;
+
+  if (MensajeReclamo == "" || MensajeReclamo == " " || MensajeReclamo == undefined )mistakes.push("⚠ Ingrese un Mensaje");
+
+  console.log(erroresreclamo); 
+
+  if(erroresreclamo.length > 0){
+    alert ("No se puede enviar el formulario");
+    $("#alerta-errores").show();
+    mistakes.forEach((elemento)=>{
+      console.log(elemento);
+      $("#mistakesform").append(`<ul> ${elemento} </ul>`)
+    })
+  }
+  else{
+    alert ("El formulario fue enviado");
+    $("#alerta-errores").hide();
+  }
+    
+
+  }
+
+  const nextBtn = document.querySelector("#next-btn");
+  const backBtn = document.querySelector("#back-btn");
+  const step1 = document.querySelector("#FormReclamo");
+  const step2 = document.querySelector("#step-2");
+  const summary = document.querySelector("#summary");
+  
+
+  nextBtn.addEventListener("click", function() {
+
+    const emailreclamo = document.querySelector("#emailreclamo").value;
+    const NumeroPedido = document.querySelector("#NumeroPedido").value;
+    const messagereclamo = document.querySelector("#messagereclamo").value;
+      
+    let erroresreclamo = [];
+
+  if (emailreclamo == "" || emailreclamo == " " || emailreclamo == undefined )erroresreclamo.push("⚠ Ingrese un Email ");
+
+  if (NumeroPedido == "" || NumeroPedido == " " || NumeroPedido == undefined )erroresreclamo.push("⚠ Ingrese un Numero de Pedido ") ;
+
+  if (messagereclamo == "" || messagereclamo == " " || messagereclamo == undefined )erroresreclamo.push("⚠ Ingrese un Mensaje ");
+
+  console.log(erroresreclamo);
+  
+  if(erroresreclamo.length > 0){
+     summary.innerHTML = `${erroresreclamo}`
+  }else{
+    summary.innerHTML = `Email: ${emailreclamo}<br>Numero de Pedido: ${NumeroPedido}<br>Mensaje: ${messagereclamo}`;
+  }
+
+});
+
+
+
+  

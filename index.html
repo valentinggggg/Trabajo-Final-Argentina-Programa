@@ -167,8 +167,10 @@
               <div class="boton-formulario">
                 <button type="submit" id="EnviarBoton" class="btn btn-outline-light">Enviar</button>
               </div>
-              <div id="alerta-errores" class="errores-cometidos">
-                <ul id="mistakesform" class="lista-errores"></ul>
+              <div class="contenedor-errores">
+                <div id="alerta-errores" class="errores-cometidos">
+                  <ul id="mistakesform" class="lista-errores"></ul>
+                </div>
               </div>
               
               </form>
@@ -195,32 +197,58 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+
+        <form id="FormReclamo " onsubmit="SubirFormReclamo(event)" >
           <div class="Formulario-Contacto">
             <div class="Inputs-Contacto"> 
               <label for="email">Email:</label>
-              <input type="email" id="itemail" name="email"  class="camposform" >
-              <div id="errormail" class="errores"> <img src="imagenes/signo-de-exclamacion.png" alt="Error"  width="20px">Ingrese un Email </div>
+              <input type="email" id="emailreclamo" name="email"  class="camposform" >
+              <div id="errormailreclamo" class="errores"> <img src="imagenes/signo-de-exclamacion.png" alt="Error"  width="20px">Ingrese un Email </div>
             </div>
         <div class="Inputs-Contacto"> 
           <label for="name">Numero de pedido:</label>
-          <input type="text" id="name" name="name" required>
-          <div id="errorpedido" class="errores"> </div>
+          <input type="text" id="NumeroPedido" name="name" required>
+          <div id="errorpedido" class="errores"> <img src="imagenes/signo-de-exclamacion.png" alt="Error"  width="20px">Ingrese su numero de pedido</div>
+        </div>
         </div>
         <div class="Inputs-Contacto"> 
           <label for="message">Mensaje:</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="messagereclamo" name="message" required></textarea>
           <div id="errormensaje" class="errores"> </div>
         </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" >Cerrar</button>
+        <button type="submit" id="next-btn" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#asistente">Enviar</button>
+      </div>
+
+    </div>
+  </div>
+</div> 
+
+
+
+<div class="modal fade " id="asistente" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content cuerpo-modal">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Resumen reclamo</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body  ">
+        <form id="step-2">
+          <p>Resumen:</p>
+          <div id="summary"></div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" id="EnviarBoton" class="btn btn-outline-dark">Enviar</button>
       </div>
     </div>
   </div>
-</div>      
+</div>       
     </section>
   </footer> 
 </body>
