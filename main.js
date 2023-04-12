@@ -9,21 +9,21 @@ function subirForm(event) {
   const telefono = $("#itTelefono").val(); 
   const mensaje = $("#itmessage").val();
 
-  if (nombre == "" || nombre == " " || nombre == undefined )mistakes.push("Ingrese su Nombre");
+  if (nombre == "" || nombre == " " || nombre == undefined )mistakes.push("⚠ Ingrese su Nombre");
 
-  if (apellido == "" || apellido == " " || apellido == undefined )mistakes.push("Ingrese su Apellido");
+  if (apellido == "" || apellido == " " || apellido == undefined )mistakes.push("⚠ Ingrese su Apellido");
         
-  if (mail == "" || mail == " " || mail == undefined )mistakes.push("Ingrese un Email ") ;
+  if (mail == "" || mail == " " || mail == undefined )mistakes.push("⚠ Ingrese un Email ") ;
 
-  if (telefono == "" || telefono == " " || telefono == undefined )mistakes.push(" Ingrese un Telefono") ;
+  if (telefono == "" || telefono == " " || telefono == undefined )mistakes.push("⚠ Ingrese un Telefono") ;
 
-  if (mensaje == "" || mensaje == " " || mensaje == undefined )mistakes.push("Ingrese un Mensaje") ;
+  if (mensaje == "" || mensaje == " " || mensaje == undefined )mistakes.push("⚠ Ingrese un Mensaje") ;
 
   console.log(mistakes);
 
   if(mistakes.length > 0){
     alert ("No se puede enviar el formulario");
-    $("#errores-cometidos").show();
+    $("#alerta-errores").show();
     mistakes.forEach((elemento)=>{
       console.log(elemento);
       $("#mistakesform").append(`<ul> ${elemento} </ul>`)
@@ -31,6 +31,7 @@ function subirForm(event) {
   }
   else{
     alert ("El formulario fue enviado")
+    $("#alerta-errores").hide();
   }
 
   };

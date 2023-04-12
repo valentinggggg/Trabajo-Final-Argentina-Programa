@@ -144,36 +144,34 @@
                   <div class="Inputs-Contacto">
                 <label for="name">Nombre:</label>
                 <input type="text" id="itname" name="name" class="camposform">
-                <div id="errorname" class="errores m"><img src="imagenes/signo-de-exclamacion.png" alt="Error" width="20px"></div>
               </div>
               <div class="Inputs-Contacto"> 
                 <label for="name">Apellido:</label>
                 <input type="text" id="itapellido" name="Apellido" class="camposform">
-                <div id="errorapellido" class="errores"><img src="imagenes/signo-de-exclamacion.png" alt="Error" width="20px"></div>
               </div>
               <div class="Inputs-Contacto"> 
                 <label for="email">Email:</label>
                 <input type="email" id="itemail" name="email"  class="camposform">
-                <div id="errormail" class="errores"> <img src="imagenes/signo-de-exclamacion.png" alt="Error"  width="20px"> </div>
+                
               </div>
               <div class="Inputs-Contacto"> 
                 <label for="telefono">Telefono:</label>
                 <input type="number" id="itTelefono" name="telefono" class="camposform">
-                <div id="errortelefono" class="errores"> <img src="imagenes/signo-de-exclamacion.png" alt="Error" width="20px"> </div>
+        
               </div>
               <div class="Mensaje-Area"> 
                 <label for="message">Mensaje:</label>
-                <input id="itmessage" name="message" class="camposform" type="text"></input>
-                <div id="errormensaje" class="erroresmsj"><img src="imagenes/signo-de-exclamacion.png" alt="Error" width= "20px"></div>
+                <textarea id="itmessage" name="message" class="camposform" type="text"></textarea>
+    
               </div>
               <div class="boton-formulario">
                 <button type="submit" id="EnviarBoton" class="btn btn-outline-light">Enviar</button>
               </div>
-              </form>
-          
-              <div id="errores-cometidos" class="alert alert-danger" role="alert">
-               <ul id="mistakesform" class="lista-errores"></ul>
+              <div id="alerta-errores" class="errores-cometidos">
+                <ul id="mistakesform" class="lista-errores"></ul>
               </div>
+              
+              </form>
 
             </div>
             </div>
