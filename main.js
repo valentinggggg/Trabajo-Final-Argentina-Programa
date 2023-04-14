@@ -37,42 +37,7 @@ function subirForm(event) {
 
   };
 
-  function SubirFormReclamo(event) {
-    event.preventDefault();
-    let erroresreclamo = [];
-    const emailReclamo = $("#emailreclamo").val();
-    const Numeropedido = $("#NumeroPedido").val();
-    const MensajeReclamo = $("#messagereclamo").val();
-    const nextBtn = document.querySelector("#next-btn");
-  const backBtn = document.querySelector("#back-btn");
-  const step1 = document.querySelector("#FormReclamo");
-  const step2 = document.querySelector("#step-2");
-  const summary = document.querySelector("#summary");
-
-  if (emailReclamo == "" || emailReclamo == " " || emailReclamo == undefined )mistakes.push("⚠ Ingrese un Email ");
-
-  if (telefono == "" || telefono == " " || telefono == undefined )mistakes.push("⚠ Ingrese un Telefono") ;
-
-  if (MensajeReclamo == "" || MensajeReclamo == " " || MensajeReclamo == undefined )mistakes.push("⚠ Ingrese un Mensaje");
-
-  console.log(erroresreclamo); 
-
-  if(erroresreclamo.length > 0){
-    alert ("No se puede enviar el formulario");
-    $("#alerta-errores").show();
-    mistakes.forEach((elemento)=>{
-      console.log(elemento);
-      $("#mistakesform").append(`<ul> ${elemento} </ul>`)
-    })
-  }
-  else{
-    alert ("El formulario fue enviado");
-    $("#alerta-errores").hide();
-  }
-    
-
-  }
-
+  
   const nextBtn = document.querySelector("#next-btn");
   const backBtn = document.querySelector("#back-btn");
   const step1 = document.querySelector("#FormReclamo");
@@ -81,7 +46,7 @@ function subirForm(event) {
   
 
   nextBtn.addEventListener("click", function() {
-
+    $("#summary").empty();
     const emailreclamo = document.querySelector("#emailreclamo").value;
     const NumeroPedido = document.querySelector("#NumeroPedido").value;
     const messagereclamo = document.querySelector("#messagereclamo").value;
@@ -97,7 +62,9 @@ function subirForm(event) {
   console.log(erroresreclamo);
   
   if(erroresreclamo.length > 0){
-     summary.innerHTML = `${erroresreclamo}`
+     erroresreclamo.forEach((elemento)=>{
+      $("#summary").append(`<li> ${elemento} </li>`)
+     })
   }else{
     summary.innerHTML = `Email: ${emailreclamo}<br>Numero de Pedido: ${NumeroPedido}<br>Mensaje: ${messagereclamo}`;
   }

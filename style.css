@@ -284,9 +284,9 @@ textarea{
     background-color: gainsboro;
 }
 
-.boton-reclamo{
+.boton-reclamo {
     width: 99vw;
-    height: 2.5rem;
+    height: 3rem;
     background-color: #024968;
     border-style: solid;
     border-color: #407f96;
@@ -311,11 +311,14 @@ textarea{
 
 #alerta-errores {
     display: none;
+    justify-content: center;
+    align-items: center;
 }
 
 .errores-cometidos {
-    display: flex;
-    position: absolute;
+    position: relative;
+    top: -450px;
+    left: -70px;
     border-color: #843f45;
     border-style: solid;
     border-width: 2px;
@@ -324,6 +327,7 @@ textarea{
     color: black;
     height: 100px;
     width: 280px;
+    display: flex;
 }
 
 
@@ -335,9 +339,56 @@ textarea{
     flex-direction: column;
     align-items: start;
 }
-
-  #summary {
-    border: 1px solid #ccc;
-    padding: 10px;
+#summary {
+    padding: 20px;
+    list-style: none;
+    font-weight: bold;
+  }
+#summary li {
+    padding: 20px;
+    list-style: none;
+    color: red;
   }
 
+@media(max-width: 992px){
+
+    .cartas {
+        background-image: url(imagenes/background-queofrecemos.png);
+        height: 1300px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin-top: -2px;
+        background-size: contain;
+        background-position: center;
+    }
+    .cuerpo-carta{
+        height: 100px;
+    
+        
+    }
+    .imagen-carta{
+        height: 50px;
+    }
+    .titulo-carta {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 15px;
+        color: black;
+    }
+    
+    .texto-carta {
+        color: #eff5f7;
+        font-size: 10px;
+        justify-content: center;
+        font-weight: bold;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .cartas-que-ofrecemos{
+        margin-top: 20px;
+        margin: 20px;
+    }
+}
