@@ -53,7 +53,7 @@ function subirForm(event) {
       
     let erroresreclamo = [];
 
-  if (emailreclamo == "" || emailreclamo == " " || emailreclamo == undefined )erroresreclamo.push("⚠ Ingrese un Email ");
+  if (emailreclamo == "" || emailreclamo == " " || emailreclamo == undefined )erroresreclamo.push("⚠ Ingrese un Email "); 
 
   if (NumeroPedido == "" || NumeroPedido == " " || NumeroPedido == undefined )erroresreclamo.push("⚠ Ingrese un Numero de Pedido ") ;
 
@@ -62,6 +62,7 @@ function subirForm(event) {
   console.log(erroresreclamo);
   
   if(erroresreclamo.length > 0){
+    alert("No se puede enviar el formulario")
      erroresreclamo.forEach((elemento)=>{
       $("#summary").append(`<li> ${elemento} </li>`)
      })
