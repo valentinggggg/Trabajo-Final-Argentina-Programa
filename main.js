@@ -62,7 +62,7 @@ function subirForm(event) {
   console.log(erroresreclamo);
   
   if(erroresreclamo.length > 0){
-    alert("No se puede enviar el formulario")
+    alert("Por favor, rellene todos los campos")
      erroresreclamo.forEach((elemento)=>{
       $("#summary").append(`<li> ${elemento} </li>`)
      })
